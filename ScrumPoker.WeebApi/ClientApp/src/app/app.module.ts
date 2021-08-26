@@ -5,15 +5,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { UiuxModule } from './uiux.module';
+import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { HomeComponent } from './components/home/home.component';
+import { AppRoutingModule } from './app-routing.module';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -24,7 +30,12 @@ import { UiuxModule } from './uiux.module';
     UiuxModule,
     FormsModule,
     UiuxModule,
-    ReactiveFormsModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    NgxsModule.forRoot([
+    ]),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsStoragePluginModule.forRoot({key: 'user'})
   ],
   providers: [],
   bootstrap: [AppComponent]
