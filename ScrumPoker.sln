@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrumPoker.WebApi", "ScrumPoker.WeebApi\ScrumPoker.WebApi.csproj", "{CD2A61BF-28E7-48EA-B543-22D5CF2A755F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrumPoker.Domain", "ScrumPoker.Domain\ScrumPoker.Domain.csproj", "{3579C4EB-844C-48A5-A321-5E9844325881}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrumPoker.Persistence", "ScrumPoker.Persistence\ScrumPoker.Persistence.csproj", "{92CA7DC7-54B3-4369-90D8-5E5F39822AC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrumPoker.Infrstructure", "ScrumPoker.Infrstructure\ScrumPoker.Infrstructure.csproj", "{1C9A82FF-9059-4D0C-B037-5A5CADD016A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrumPoker.Dto", "ScrumPoker.Dto\ScrumPoker.Dto.csproj", "{150B5525-D1E8-45EF-BAF0-27D6A86E2C84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD2A61BF-28E7-48EA-B543-22D5CF2A755F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2A61BF-28E7-48EA-B543-22D5CF2A755F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD2A61BF-28E7-48EA-B543-22D5CF2A755F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD2A61BF-28E7-48EA-B543-22D5CF2A755F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3579C4EB-844C-48A5-A321-5E9844325881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3579C4EB-844C-48A5-A321-5E9844325881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3579C4EB-844C-48A5-A321-5E9844325881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3579C4EB-844C-48A5-A321-5E9844325881}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92CA7DC7-54B3-4369-90D8-5E5F39822AC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92CA7DC7-54B3-4369-90D8-5E5F39822AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92CA7DC7-54B3-4369-90D8-5E5F39822AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92CA7DC7-54B3-4369-90D8-5E5F39822AC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C9A82FF-9059-4D0C-B037-5A5CADD016A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C9A82FF-9059-4D0C-B037-5A5CADD016A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C9A82FF-9059-4D0C-B037-5A5CADD016A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C9A82FF-9059-4D0C-B037-5A5CADD016A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{150B5525-D1E8-45EF-BAF0-27D6A86E2C84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{150B5525-D1E8-45EF-BAF0-27D6A86E2C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{150B5525-D1E8-45EF-BAF0-27D6A86E2C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{150B5525-D1E8-45EF-BAF0-27D6A86E2C84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A1B2523-910A-4140-A1C3-49852FE1524D}
+	EndGlobalSection
+EndGlobal
