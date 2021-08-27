@@ -1,0 +1,31 @@
+.create-room-container {
+    width: 100% !important;
+    height: 100%;
+    .create-room-toolbar {
+        background: none !important;
+    
+        mat-icon {
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    .content-container {
+        width: 100vw !important;
+        height: 100% !important;
+
+        .form-container {
+
+            .create-game-form {
+                mat-form-field {
+                    width: 600px;
+                }
+            }
+        }
+        .submit-button {
+            width: 600px;
+        }
+    }
+}

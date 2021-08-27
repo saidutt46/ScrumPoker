@@ -1,0 +1,41 @@
+<div class="create-room-container" fxLayout="column">
+    <mat-toolbar class="create-room-toolbar" fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxLayoutAlign="start center" fxLayoutGap="16px">
+            <mat-icon (click)="navigateBack()">arrow_back</mat-icon>
+            <span class="toolbar-text">Create Game</span>
+        </div>
+    </mat-toolbar>
+    <div class="content-container" >
+        <div class="form-container" fxFlex fxLayout="column" fxLayoutGap="16px" fxLayoutAlign="center center">
+            <form fxLayoutGap="4px" class="create-game-form" fxLayout="column" [formGroup]="createRoomForm">
+                <mat-form-field appearance="fill">
+                    <mat-label>Game name</mat-label>
+                    <input required id="name" matInput formControlName="name" placeholder="Ex. Work Item 12345 for creating...">
+                    <mat-error *ngIf="createRoomForm.get('name').hasError('required')">Name is required</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Voting System</mat-label>
+                    <mat-select required formControlName="votingSystem" placeholder="How do you want to play..." name="votingSystem">
+                      <mat-option *ngFor="let system of votingSystem | enumArray; index as i" [value]="i">
+                        {{system}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="createRoomForm.get('votingSystem').hasError('required')">
+                        Voting type is required
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Owner</mat-label>
+                    <mat-select formControlName="owner" placeholder="Who can show the cards..." name="owner">
+                      <mat-option *ngFor="let owner of ownerSettings" [value]="owner.value">
+                        {{owner.key}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>                
+            </form>
+            <mat-dialog-actions fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="16px">
+                <button [disabled]="createRoomForm.invalid" color="primary" class="submit-button" mat-raised-button (click)="createRoom()">Create game</button>
+            </mat-dialog-actions>
+        </div>
+    </div>
+</div>

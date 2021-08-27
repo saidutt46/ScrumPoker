@@ -14,12 +14,23 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { NOTIFICATION_SERV_TOKEN, NotificationService } from './services/notification.service';
+import { UserState } from './ngxs/user/user.state';
+import { CreateRoomComponent } from './components/create-room/create-room.component';
+import { EnumArrayPipe } from './pipes/enum-array.pipe';
+import { GameState } from './ngxs/game/game.state';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavigationComponent
+    NavigationComponent,
+    RegisterComponent,
+    LoginComponent,
+    CreateRoomComponent,
+    EnumArrayPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -33,11 +44,16 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     AppRoutingModule,
     ReactiveFormsModule,
     NgxsModule.forRoot([
+      UserState,
+      GameState
     ]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsStoragePluginModule.forRoot({key: 'user'})
   ],
-  providers: [],
+  entryComponents: [RegisterComponent, LoginComponent],
+  providers: [
+    { provide: NOTIFICATION_SERV_TOKEN, useClass: NotificationService },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
