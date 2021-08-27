@@ -18,6 +18,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { NOTIFICATION_SERV_TOKEN, NotificationService } from './services/notification.service';
 import { UserState } from './ngxs/user/user.state';
+import { CreateRoomComponent } from './components/create-room/create-room.component';
+import { EnumArrayPipe } from './pipes/enum-array.pipe';
+import { GameState } from './ngxs/game/game.state';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { UserState } from './ngxs/user/user.state';
     HomeComponent,
     NavigationComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    CreateRoomComponent,
+    EnumArrayPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -39,11 +44,13 @@ import { UserState } from './ngxs/user/user.state';
     AppRoutingModule,
     ReactiveFormsModule,
     NgxsModule.forRoot([
-      UserState
+      UserState,
+      GameState
     ]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsStoragePluginModule.forRoot({key: 'user'})
   ],
+  entryComponents: [RegisterComponent, LoginComponent],
   providers: [
     { provide: NOTIFICATION_SERV_TOKEN, useClass: NotificationService },
   ],

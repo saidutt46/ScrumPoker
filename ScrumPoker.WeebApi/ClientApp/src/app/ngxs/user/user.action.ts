@@ -5,15 +5,15 @@ export namespace UserActions {
     export class LoginUser {
         static readonly type = '[USER] LOGIN';
         constructor(public payload: UserLoginModel) { }
-      }
+    }
 
-      export class RegisterUser {
+    export class RegisterUser {
         static readonly type = '[USER] REGISTER';
         constructor(public payload: UserRegisterModel) { }
-      }
+    }
 
-      export class RefreshUserDetails {
+    export class RefreshUserDetails {
         static readonly type = '[USER] REFRESH';
         constructor(public payload: string) { }
-      }
+    }
 }
