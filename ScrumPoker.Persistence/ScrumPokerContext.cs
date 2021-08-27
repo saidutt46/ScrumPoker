@@ -18,7 +18,9 @@ namespace ScrumPoker.Persistence
             base.OnModelCreating(builder);
             builder.Entity<Participant>().Property(p => p.DisplayName).IsRequired();
         }
-            
+
+        public DbSet<Game> Game { get; set; }
+
         public override int SaveChanges()
         {
             AddAuitInfo();

@@ -11,12 +11,14 @@
     <None Remove="Profiles\" />
     <None Remove="AutoMapper" />
     <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Requests\" />
     <Folder Include="Response\" />
     <Folder Include="DtoModels\" />
     <Folder Include="Profiles\" />
+    <Folder Include="Shared\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />

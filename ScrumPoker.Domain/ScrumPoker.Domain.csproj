@@ -16,6 +16,7 @@
     <None Remove="Microsoft.Extensions.Configuration.EnvironmentVariables" />
     <None Remove="Microsoft.Extensions.Configuration.Json" />
     <None Remove="Models\" />
+    <None Remove="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.9" />
@@ -34,5 +35,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
 </Project>

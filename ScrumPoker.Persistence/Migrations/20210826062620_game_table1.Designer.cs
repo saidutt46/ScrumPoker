@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ScrumPoker.Persistence;
 
 namespace ScrumPoker.Persistence.Migrations
 {
     [DbContext(typeof(ScrumPokerContext))]
-    partial class ScrumPokerContextModelSnapshot : ModelSnapshot
+    [Migration("20210826062620_game_table1")]
+    partial class game_table1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

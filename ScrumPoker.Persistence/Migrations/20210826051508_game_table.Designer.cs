@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ScrumPoker.Persistence;
 
 namespace ScrumPoker.Persistence.Migrations
 {
     [DbContext(typeof(ScrumPokerContext))]
-    partial class ScrumPokerContextModelSnapshot : ModelSnapshot
+    [Migration("20210826051508_game_table")]
+    partial class game_table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -135,7 +137,7 @@ namespace ScrumPoker.Persistence.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("Owner")
+                    b.Property<Guid>("Owner")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("VotingSystem")
