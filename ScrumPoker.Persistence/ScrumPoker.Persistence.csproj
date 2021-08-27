@@ -20,9 +20,13 @@
     <None Remove="Autofac" />
     <None Remove="Autofac.Extensions.DependencyInjection" />
     <None Remove="Newtonsoft.Json" />
+    <None Remove="Repository\" />
+    <None Remove="RepoInterface\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Shared\" />
+    <Folder Include="Repository\" />
+    <Folder Include="RepoInterface\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="5.0.9" />

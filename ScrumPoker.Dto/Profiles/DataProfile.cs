@@ -2,6 +2,7 @@
 using AutoMapper;
 using ScrumPoker.Domain.Models;
 using ScrumPoker.Dto.DtoModels;
+using ScrumPoker.Dto.Requests;
 
 namespace ScrumPoker.Dto.Profiles
 {
@@ -10,6 +11,7 @@ namespace ScrumPoker.Dto.Profiles
         public DataProfile()
         {
             CreateMap<Participant, UserProfileDto>();
+            CreateMap<CreateGame, Game>();
         }
     }
 }

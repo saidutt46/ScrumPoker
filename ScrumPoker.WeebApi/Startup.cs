@@ -17,6 +17,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ScrumPoker.Domain.Models;
 using ScrumPoker.Dto.Profiles;
+using ScrumPoker.Infrastructure;
 using ScrumPoker.Persistence;
 
 namespace ScrumPoker.WeebApi
@@ -137,6 +138,13 @@ namespace ScrumPoker.WeebApi
             });
             services.AddOptions();  
 
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            // Register your own things directly with Autofac
+            builder.RegisterModule(new PersistenceAutofacModule());
+            builder.RegisterModule(new InfrastructureAutofaceModule());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
