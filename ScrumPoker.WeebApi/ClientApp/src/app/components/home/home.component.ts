@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  actionCardList = [
+    'Sign Up',
+    'Create an Instant Room',
+    'Invite Others',
+    'Start estimation stories',
+    `Well don't forget to play Poker`
+  ];
 
   constructor() { }
 
