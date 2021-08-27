@@ -16,6 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { NOTIFICATION_SERV_TOKEN, NotificationService } from './services/notification.service';
+import { UserState } from './ngxs/user/user.state';
 
 @NgModule({
   declarations: [
@@ -37,11 +39,14 @@ import { LoginComponent } from './components/login/login.component';
     AppRoutingModule,
     ReactiveFormsModule,
     NgxsModule.forRoot([
+      UserState
     ]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsStoragePluginModule.forRoot({key: 'user'})
   ],
-  providers: [],
+  providers: [
+    { provide: NOTIFICATION_SERV_TOKEN, useClass: NotificationService },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

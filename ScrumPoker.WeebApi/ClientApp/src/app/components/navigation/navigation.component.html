@@ -1,7 +1,7 @@
 <mat-toolbar color="primary" class="classic-toolbar" fxLayoutAlign="space-between center">
     <span>Scrum Poker</span>
     <div fxLayout="row">
-        <button mat-button>Register</button>
-        <button mat-button>Login</button>
+        <button mat-button (click)="userRegister()">Register</button>
+        <button mat-button (click)="userLogin()">Login</button>
     </div>
 </mat-toolbar>
