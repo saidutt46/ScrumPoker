@@ -26,6 +26,11 @@
         }
         .submit-button {
             width: 600px;
+            min-height: 37px;
+        }
+
+        ::ng-deep .mat-progress-spinner circle, .mat-spinner circle {
+            stroke: whitesmoke !important;
         }
     }
 }

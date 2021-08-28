@@ -36,7 +36,6 @@ export class RegisterComponent implements OnInit {
     model.username = this.registerForm.get('username').value;
     model.displayName = this.registerForm.get('displayName').value;
     model.password = this.registerForm.get('password').value;
-    console.warn(model);
     this.store.dispatch(new UserActions.RegisterUser(model)).subscribe(res => {
       this.dialog.closeAll();
     }, err =>  {

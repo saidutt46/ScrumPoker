@@ -34,7 +34,11 @@
                   </mat-form-field>                
             </form>
             <mat-dialog-actions fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="16px">
-                <button [disabled]="createRoomForm.invalid" color="primary" class="submit-button" mat-raised-button (click)="createRoom()">Create game</button>
+                <button fxLayoutAlign="center center" [disabled]="createRoomForm.invalid" color="primary" class="submit-button" mat-raised-button (click)="createRoom()">
+                    <mat-spinner  [diameter]="25" *ngIf="loading$ | async">
+                    </mat-spinner>
+                    <span *ngIf="(loading$ | async) == false">Create game</span>
+                </button>
             </mat-dialog-actions>
         </div>
     </div>
