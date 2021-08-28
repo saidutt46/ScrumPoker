@@ -26,6 +26,7 @@
     "@angular/router": "9.1.13",
     "@nguniversal/module-map-ngfactory-loader": "8.1.1",
     "@ngxs/devtools-plugin": "^3.7.2",
+    "@ngxs/logger-plugin": "^3.7.2",
     "@ngxs/storage-plugin": "^3.7.2",
     "@ngxs/store": "^3.7.2",
     "bootstrap": "^4.6.0",

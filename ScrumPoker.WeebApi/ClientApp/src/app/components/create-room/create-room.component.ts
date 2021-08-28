@@ -17,6 +17,7 @@ import { UserStateSelector } from 'src/app/ngxs/user/user.selector';
 export class CreateRoomComponent implements OnInit {
   @Select(UserStateSelector.getUserProfile) userDetails$: Observable<UserProfileModel>;
   @Select(GameStateSelector.getGameDetails) gameDetails$: Observable<Game>;
+  @Select(GameStateSelector.formLoading) loading$: Observable<boolean>;
 
   createRoomForm: FormGroup;
   votingSystem = VotingSystemTypes;
@@ -42,8 +43,6 @@ export class CreateRoomComponent implements OnInit {
         value: null
       },
     ];
-    console.warn(this.ownerSettings);
-    console.warn(this.ownerSettings[0].key);
     this.createRoomForm = this.fb.group({
       name: ['', [Validators.required]],
       votingSystem: [this.votingSystem.Fibonacci, [Validators.required]],
@@ -60,7 +59,6 @@ export class CreateRoomComponent implements OnInit {
     model.name = this.createRoomForm.get('name').value;
     model.votingSystem = this.createRoomForm.get('votingSystem').value;
     model.owner = this.createRoomForm.get('owner').value;
-    console.warn(model);
     this.store.dispatch([
       new GameActions.PostGame(model)
     ]).toPromise().then(s => {

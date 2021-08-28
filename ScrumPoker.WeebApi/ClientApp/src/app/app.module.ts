@@ -21,6 +21,8 @@ import { UserState } from './ngxs/user/user.state';
 import { CreateRoomComponent } from './components/create-room/create-room.component';
 import { EnumArrayPipe } from './pipes/enum-array.pipe';
 import { GameState } from './ngxs/game/game.state';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -46,9 +48,10 @@ import { GameState } from './ngxs/game/game.state';
     NgxsModule.forRoot([
       UserState,
       GameState
-    ]),
+    ], { developmentMode: !environment.production }),
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    NgxsStoragePluginModule.forRoot({key: 'user'})
+    NgxsStoragePluginModule.forRoot({key: 'user'}),
+    NgxsLoggerPluginModule.forRoot()
   ],
   entryComponents: [RegisterComponent, LoginComponent],
   providers: [

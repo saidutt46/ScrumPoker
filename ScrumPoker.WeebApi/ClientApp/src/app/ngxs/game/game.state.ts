@@ -35,10 +35,12 @@ export class GameState {
               return throwError(x);
             }),
             tap((res: BaseDtoResponse<Game>) => {
-                patchState({
-                    gameDetails: res.payload,
-                    createGameformLoading: false
-                });
+                if (res) {
+                    patchState({
+                        gameDetails: res.payload,
+                        createGameformLoading: false
+                    });
+                }
             }, err => {
               patchState({
                 createGameformLoading: false
